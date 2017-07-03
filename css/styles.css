@@ -1,0 +1,17 @@
+.container {
+	margin: 20px auto;
+	padding: 1px;
+	max-width: 200px;
+}
+
+.square {
+	height: 16px;
+	width: 16px;
+	background-color: grey;
+	margin: 1px;
+	display: inline-block;
+}
+
+.painted {
+	background-color: lime;
+}
