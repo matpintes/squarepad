@@ -1,22 +1,33 @@
 count = 12;
+brush = null;
 
 $(document).ready(function() {
 	// Initialize
 	repaint();
 
 	$('#reset-btn').on('click', function(){
-		count = prompt("Enter number of squares per side");
+		count = prompt("Enter number of squares per side", 12);
 		if(count == null) count = 12;
 		repaint();
 	});
+
+	// Toggle paintbrush
+	$(document).on('keyup', function(event){
+		if(event.key == 'p') {
+			$('.switch').toggleClass('active');
+			$('.square').on('mouseenter', function(){
+				$(this).addClass('painted');
+			}, null);
+		}
+	});
+
+	$('.pick').on('click', function(){
+		$(this).toggleClass('picked');
+	});
+	$('.color').on('click', function(){
+		$(this).toggleClass('chosen');
+	});
 });
-
-
-
-
-
-
-
 
 function repaint() {
 	// Remove all child elements
@@ -30,7 +41,7 @@ function repaint() {
 		}
 	}
 	// Attach event handler
-	$('.square').hover(function(){
-		$(this).addClass('painted');
-	}, null);
+	$('.square').hover(null, null);
+	// Reset to default state
+	$('.switch').removeClass('active');
 }

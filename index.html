@@ -4,17 +4,67 @@
 	<title>Squarepad</title>
 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Source+Code+Pro" rel="stylesheet">
+
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 <body>
 
   <div class="menu">
-    <p class="button" id="reset-btn">Reset</p>
-    <p class="switch">Active</p>
+    <section class="controls-sec">
+      <h1>Controls</h1>
+      <div>
+        <p class="button" id="reset-btn">Reset</p>
+        <p class="button" id="erase-btn">Erase</p>
+      </div>
+      
+      <p class="switch" id="mode-switch">Active</p>
+      <p class="switch" id="matrix-switch">Matrix</p>
+    </section>
+    
+    <section class="mode-sec">
+      <h1>Mode</h1>
+      <ul class="picker">
+        <li class="pick">pen</li>
+        <li class="pick">brush</li>
+      </ul>
+    </section>
+
+    <section class="color-sec">
+      <h1>Color</h1>
+      <div class="picker">
+        <div class="color" id="blue" style="background-color: blue;"></div>
+        <div class="color" id="red" style="background-color: red;"></div>
+        <div class="color" id="green" style="background-color: green;"></div>
+        <div class="color" id="lime" style="background-color: lime;"></div>
+        <div class="color" id="black" style="background-color: black;"></div>
+        <div class="color" id="white" style="background-color: white;"></div>
+      </div>
+    </section>
+
+    <section class="info">
+      <section class="controls">
+        <h1>Controls</h1>
+        <p>Erase canvas - <span>e</span></p>
+        <p>Reset (set new matrix size) - <span>r</span></p>
+        <p>Toggle coloring activation - <span>a</span></p>
+        <p>Toggle matrix lines - <span>m</span></p>
+        <p>Toggle color - <span>c</span></p>
+      </section>
+
+      <section class="description">
+        <p><a href="https://www.theodinproject.com/courses/web-development-101/lessons/javascript-and-jquery">TheOdinProject</a> Javascript/jQuery introduction project</p>
+        <p>&copy; Matúš Pinteš, 2017</p>
+        <div class="icons">
+          <img src="" alt="github" />
+          <img src="" alt="gplus" />
+          <img src="" alt="linkedin" />
+        </div>
+      </section>
+    </section>
   </div>
 
-	<div class="container"></div>
-
+  <div class="container"></div>
 	<script type="text/javascript" src="js/squares.js"></script>
 </body>
 </html>
