@@ -85,6 +85,7 @@ section {
 div .button {
 	display: inline-block;
 }
+
 /* ====================== Switch ================== */
 .switch {
 	border: 2px solid #707eb7;
@@ -152,13 +153,6 @@ div .button {
 }
 
 
-
-
-
-
-
-
-
 /* ======================================================================== */
 .container {
     height: 850px;
@@ -177,8 +171,10 @@ div .button {
 	display: inline;
 	box-sizing: border-box;
 	float: left;
-	border: 1px dotted black;
 	background-color: transparent;
+}
+.matrix {
+	border: 1px dotted black;
 }
 
 .painted {
@@ -208,3 +204,10 @@ span {
 	color: rgb(53, 61, 93);
 }
 /* =======================================================*/
+/* Temporary */
+.controls {
+	display: none;
+}
+#brush {
+	display: none;
+}
