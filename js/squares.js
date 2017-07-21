@@ -31,16 +31,15 @@ $(document).ready(function() {
 		// Populate canvas
 		populate();
 		if(matrix) $('.square').addClass('matrix');
-	});
-	// Erase -> repopulate canvas
-	$('#erase-btn').on('click', function(){
-		// Remove all child elements
-		$('.container').empty();
-		// Populate canvas
-		populate();
-		if(matrix) $('.square').addClass('matrix');
-		active = false;
 		$('#mode-switch').removeClass('active');
+	});
+	// Erase -> set background color to transparent
+	$('#erase-btn').on('click', function(){
+
+
+
+
+		$('.square').css('background-color', 'transparent');
 	});
 	$('#matrix-switch').on('click', function(){
 		if(matrix) {
@@ -55,7 +54,7 @@ $(document).ready(function() {
 	});
 	$('#mode-switch').on('click', function(){
 		if(active) {
-			$('.square').on('mouseenter', null);
+			$('.square').off('mouseenter');
 			$(this).removeClass('active');
 			active = false;
 		} else {
