@@ -1,17 +1,23 @@
 count = 12;
-color = 'rgba(255, 0, 0, 1)';
+color = 'rgb(255, 0, 0)';
 matrix = true;
 active = false;
 squareHandler = null;
+mode = 'pen';
 
-mode = ['pen', 'brush'];
-mIndex = 0;
-
-paint = function () {
-	$(this).css('background-color', color);
+pen = function(elem) {
+	$(elem).css('background-color', color);
+	$(elem).css('opacity', 1);
 }
-
-
+brush = function(elem) {
+	if($(elem).css('background-color') === color) {
+		var opacity = $(elem).css('opacity');
+		$(elem).css('opacity', parseFloat(opacity) + 0.1);
+	} else {
+		$(elem).css('background-color', color);
+		$(elem).css('opacity', 0.1);
+	}
+}
 
 $(document).ready(function() {
 	// Initialize
@@ -32,13 +38,10 @@ $(document).ready(function() {
 		populate();
 		if(matrix) $('.square').addClass('matrix');
 		$('#mode-switch').removeClass('active');
+		active = false;
 	});
 	// Erase -> set background color to transparent
 	$('#erase-btn').on('click', function(){
-
-
-
-
 		$('.square').css('background-color', 'transparent');
 	});
 	$('#matrix-switch').on('click', function(){
@@ -58,7 +61,21 @@ $(document).ready(function() {
 			$(this).removeClass('active');
 			active = false;
 		} else {
-			$('.square').on('mouseenter', paint);
+			/*switch(mode) {
+				case 'pen':
+					$('.square').on('mouseenter', pen);
+					break;
+				case 'brush':
+					$('.square').on('mouseenter', brush);
+					break;
+				default:
+					console.log('Error deciding on mode');
+			}*/
+			$('.square').on('mouseenter', function(){
+				if(mode === 'pen') pen(this);
+				else if(mode === 'brush') brush(this);
+				else console.log('Error setting event listener');
+			});
 			$(this).addClass('active');
 			active = true;
 		}
@@ -68,6 +85,21 @@ $(document).ready(function() {
 		$('.color').removeClass('chosen');
 		$(this).addClass('chosen');
 		color = $(this).css('background-color');
+	});
+	$('.pick').on('click', function(){
+		$('.pick').removeClass('picked');
+		$(this).addClass('picked');
+		mode = $(this).attr('id');
+		/*switch(mode) {							 !!!!!!!!!!!!!!!! Adds event listeners to squares even if active is false !!!!!!!!!!! 
+			case 'pen':
+				$('.square').on('mouseenter', pen);
+				break;
+			case 'brush':
+				$('.square').on('mouseenter', brush);
+				break;
+			default:
+				console.log('Error deciding on mode');
+		}*/
 	});
 });
 
@@ -80,9 +112,4 @@ function populate() {
 			$('.container').append('<div class="square" style="width: '+size+'px; height: '+size+'px"></div>');
 		}
 	}
-	// Attach event handler
-	//$('.square').on('mouseenter', null);
 }
-
-
-

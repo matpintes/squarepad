@@ -53,26 +53,26 @@ body {
 }
 
 .menu {
-	float: left;
-    background-color: wheat;
-    margin: 15px;
-    padding: 35px;
-    box-shadow: 0px 0px 15px 1px #111;
+   float: left;
+   background-color: wheat;
+   margin: 15px;
+   padding: 35px;
+   box-shadow: 0px 0px 15px 1px #111;
 }
 
 
 .button {
-	border-radius: 10px;
-    border: 1px solid #353d5d;
-    padding: 0.5em 2em;
-    font-size: 1.2em;
-    background-color: #707eb7;
-    box-shadow: 1px 1px 2px 0px black;
-    color: #feffff;
-    cursor: pointer;
-    margin: 10px 5px;
-    text-align: center;
-    width: 70px;
+   border-radius: 10px;
+   border: 1px solid #353d5d;
+   padding: 0.5em 2em;
+   font-size: 1.2em;
+   background-color: #707eb7;
+   box-shadow: 1px 1px 2px 0px black;
+   color: #feffff;
+   cursor: pointer;
+   margin: 10px 5px;
+   text-align: center;
+   width: 70px;
 }
 .button:hover {
 	background-color: rgb(53, 61, 93);
@@ -159,16 +159,17 @@ div .button {
     width: 850px;
     float: left;
     box-sizing: content-box;
-    background-color: rgb(247, 229, 195);
+    /*background-color: rgb(247, 229, 195);*/
+    background-color: white;
     box-shadow:  0px 0px 15px 1px #111, inset 0 0 12px 0px;
     margin: 15px;
     padding: 8px;
-	border: 25px solid wheat;
+	 border: 25px solid wheat;
     border-radius: 30px 0 30px 0;
 }
 
 .square {
-	display: inline;
+	/*display: inline;*/
 	box-sizing: border-box;
 	float: left;
 	background-color: transparent;
@@ -206,8 +207,5 @@ span {
 /* =======================================================*/
 /* Temporary */
 .controls {
-	display: none;
-}
-#brush {
 	display: none;
 }
