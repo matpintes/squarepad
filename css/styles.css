@@ -204,8 +204,15 @@ span {
 	font-weight: 700;
 	color: rgb(53, 61, 93);
 }
-/* =======================================================*/
-/* Temporary */
+/* ====================== Logos ===================== */
+.icons img {
+   width: 32px;
+   height: 32px;
+}
+.icons {
+   margin: 5px;
+}
+/* === temporary === */
 .controls {
-	display: none;
+   display: none;
 }
