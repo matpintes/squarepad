@@ -117,7 +117,7 @@ div .button {
 .pick {
 	display: inline-block;
 	cursor: pointer;
-	color: white;
+   color: black;
 	margin-right: 5px;
 	border: 1px solid #707eb7;
 	border-radius: 40px;
@@ -130,7 +130,8 @@ div .button {
 .picked {
 	box-shadow: none;
 	border: none;
-	background-color: rgb(53, 61, 93);
+   background-color: rgb(53, 61, 93);
+   color: white;
 }
 /* ======================================================================== */
 
@@ -177,11 +178,6 @@ div .button {
 .matrix {
 	border: 1px dotted black;
 }
-
-.painted {
-	background-color: lime;
-}
-
 section p {
 	padding: 0.1em;
 }
@@ -204,6 +200,10 @@ span {
 	font-weight: 700;
 	color: rgb(53, 61, 93);
 }
+a {
+   color: navy;
+   font-weight: 900;
+}
 /* ====================== Logos ===================== */
 .icons img {
    width: 32px;
@@ -213,6 +213,3 @@ span {
    margin: 5px;
 }
 /* === temporary === */
-.controls {
-   display: none;
-}
